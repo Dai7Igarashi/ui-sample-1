@@ -1,0 +1,8 @@
+{
+  "extends": "@repo/typescript-config/vue.json",
+  "compilerOptions": {
+    "typeRoots": ["types"]
+  },
+  "include": [".", ".storybook/*"],
+  "exclude": ["node_modules", "dist", "build"],
+}
