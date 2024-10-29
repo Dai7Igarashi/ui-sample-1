@@ -5,6 +5,11 @@
     "node": ">=22",
     "npm": ">=10"
   },
+  "packageManager": "^npm@10.0.0",
+  "workspaces": [
+    "packages/*",
+    "configs/*"
+  ],
   "devDependencies": {
     "turbo": "2.2.3"
   }
