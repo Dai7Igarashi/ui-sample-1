@@ -10,6 +10,10 @@
     "packages/*",
     "configs/*"
   ],
+
+  "scripts": {
+    "build": "turbo run build"
+  },
   "devDependencies": {
     "npm-run-all2": "7.0.1",
     "turbo": "2.2.3"

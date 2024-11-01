@@ -1,8 +1,13 @@
 {
   "extends": "@repo/typescript-config/vue.json",
   "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationMap": true,
+    "declarationDir": "./dist",
     "typeRoots": ["types"]
   },
-  "include": [".", ".storybook/*"],
-  "exclude": ["node_modules", "dist", "build"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.vue"],
+  "exclude": ["./src/**/*.test.*","./src/**/*.stories.*"]
 }
