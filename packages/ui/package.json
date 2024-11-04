@@ -7,11 +7,14 @@
   },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "types": ".dist//index.d.ts",
+  "types": ".dist/index.d.ts",
   "style": "./dist/index.css",
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": "./dist/**"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com"
