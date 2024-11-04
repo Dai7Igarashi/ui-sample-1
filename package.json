@@ -10,11 +10,17 @@
     "packages/*",
     "configs/*"
   ],
-
   "scripts": {
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "dryrun": "lerna publish --dry-run --conventional-commits --create-release github --yes --no-private",
+    "dryrun:major": "npm run dryrun -- major",
+    "dryrun:minor": "npm run dryrun -- minor",
+    "dryrun:patch": "npm run dryrun -- patch"
   },
   "devDependencies": {
+    "@lerna-lite/cli": "3.10.0",
+    "@lerna-lite/publish": "3.10.0",
+    "@lerna-lite/version": "3.10.0",
     "npm-run-all2": "7.0.1",
     "turbo": "2.2.3"
   }

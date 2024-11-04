@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/@lerna-lite/cli/schemas/lerna-schema.json",
+  "packages": ["packages/*"],
+  "version": "independent",
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "registry": "https://npm.pkg.github.com"
+    },
+    "version": {
+      "includeMergedTags": true,
+      "message": "chore: lerna publish",
+      "allowBranch": ["release/*"]
+    }
+  }
+}

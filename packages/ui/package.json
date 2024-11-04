@@ -5,6 +5,23 @@
     "node": ">=22",
     "npm": ">=10"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": ".dist//index.d.ts",
+  "style": "./dist/index.css",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "directory": "packages/ui",
+    "type": "git",
+    "url": "https://github.com/Dai7Igarashi/ui-sample-1.git"
+  },
+  "license": "UNLICENSED",
   "scripts": {
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
