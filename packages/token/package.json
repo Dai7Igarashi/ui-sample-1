@@ -1,13 +1,22 @@
 {
   "name": "token",
   "version": "0.0.0",
-  "main": "index.js",
   "files": [
     "dist"
   ],
   "exports": {
     "./*.css": "./dist/*.css"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "directory": "packages/token",
+    "type": "git",
+    "url": "https://github.com/Dai7Igarashi/ui-sample-1.git"
+  },
+  "license": "UNLICENSED",
   "scripts": {
     "clean": "rm -rf dist",
     "prebuild": "npm run clean",
@@ -19,9 +28,5 @@
     "postcss": "8.4.47",
     "postcss-cli": "11.0.0",
     "postcss-import": "16.1.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }
