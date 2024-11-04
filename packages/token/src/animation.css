@@ -1,0 +1,23 @@
+:root {
+  --animation-move-easing: var(--animation-easing-ease-out);
+  --animation-move-duration: var(--animation-duration-neutral);
+  --animation-appear-in-easing: var(--animation-easing-ease-in-out);
+  --animation-appear-in-duration: var(--animation-duration-neutral);
+  --animation-disappear-easing: var(--animation-easing-ease-in-out);
+  --animation-disappear-duration: var(--animation-duration-fast);
+  --animation-in-view-easing: var(--animation-easing-ease-out);
+  --animation-in-view-duration: var(--animation-duration-neutral);
+  --animation-out-of-view-easing: var(--animation-easing-ease-out);
+  --animation-out-of-view-duration: var(--animation-duration-neutral);
+  --animation-content-change-easing: var(--animation-easing-ease-in-out);
+  --animation-content-change-duration: var(--animation-duration-fast);
+  --animation-scale-up-easing: var(--animation-easing-ease-out);
+  --animation-scale-up-duration: var(--animation-duration-slow);
+  --animation-scale-down-easing: var(--animation-easing-ease-out);
+  --animation-scale-down-duration: var(--animation-duration-neutral);
+  --animation-duration-fast: 150ms;
+  --animation-duration-neutral: 350ms;
+  --animation-duration-slow: 500ms;
+  --animation-easing-ease-out: cubic-bezier(0, 0, 0, 1);
+  --animation-easing-ease-in-out: cubic-bezier(0.5, 0, 0.5, 1);
+}
