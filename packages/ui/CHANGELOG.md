@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.2.0...@dai7igarashi/ui@0.3.0) (2024-11-05)
+
+### Features
+
+* add CVLinkButton ([f4bc6dc](https://github.com/Dai7Igarashi/ui-sample-1/commit/f4bc6dc194de3a817da92122dc040fcf8ab4a667))
+
 # [0.2.0](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.1.0...@dai7igarashi/ui@0.2.0) (2024-11-04)
 
 ### Features
