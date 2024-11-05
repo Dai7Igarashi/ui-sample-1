@@ -12,9 +12,6 @@
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": "./dist/**"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com"
