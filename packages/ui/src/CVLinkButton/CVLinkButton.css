@@ -1,0 +1,215 @@
+:root {
+  --LinkButton-tapHighlightColor: var(--gray-5-alpha);
+  --LinkButton-onFocus-outlineColor: var(--color-focus-clarity);
+
+  --LinkButton--contained-backgroundColor: var(--color-surface-accent-primary);
+  --LinkButton--contained-color: var(--color-text-high-emphasis-inverse);
+  --LinkButton--contained-onActive-backgroundColor: var(--primary-green-100);
+  --LinkButton--contained-onHover-backgroundColor: var(--primary-green-100);
+
+  --LinkButton--outlined-borderColor: var(--color-border-accent-primary);
+  --LinkButton--outlined-color: var(--color-text-accent-primary);
+  --LinkButton--outlined-onActive-backgroundColor: var(--primary-green-5);
+  --LinkButton--outlined-onHover-backgroundColor: var(--primary-green-5);
+
+  --LinkButton--lighted-backgroundColor: var(
+    --color-surface-accent-primary-light
+  );
+  --LinkButton--lighted-color: var(--color-text-accent-primary);
+  --LinkButton--lighted-onActive-backgroundColor: var(--primary-green-10);
+  --LinkButton--lighted-onHover-backgroundColor: var(--primary-green-10);
+
+  --LinkButton--neutral-backgroundColor: var(--color-surface-tertiary);
+  --LinkButton--neutral-color: var(--color-text-medium-emphasis);
+  --LinkButton--neutral-onActive-backgroundColor: var(--gray-20-alpha);
+  --LinkButton--neutral-onHover-backgroundColor: var(--gray-20-alpha);
+
+  --LinkButton--danger-borderColor: var(--color-border-caution);
+  --LinkButton--danger-color: var(--color-text-caution);
+  --LinkButton--danger-onActive-backgroundColor: var(--caution-red-5-alpha);
+  --LinkButton--danger-onHover-backgroundColor: var(--caution-red-5-alpha);
+}
+
+.ui-CVLinkButton {
+  align-items: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-family: inherit;
+  font-weight: bold;
+  justify-content: center;
+  line-height: 1.3;
+  -webkit-tap-highlight-color: var(--LinkButton-tapHighlightColor);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.ui-CVLinkButton:focus {
+  outline: 2px solid var(--LinkButton-onFocus-outlineColor);
+  outline-offset: 1px;
+}
+
+.ui-CVLinkButton:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.ui-CVLinkButton--fullWidth {
+  width: 100%;
+}
+
+.ui-CVLinkButton--large {
+  /* To be relative value with font size; this means base height / base font size  */
+  border-radius: calc(48em / 16);
+  font-size: 1em;
+  min-height: 48px;
+  padding: 8px 16px;
+}
+
+.ui-CVLinkButton--medium {
+  border-radius: calc(40em / 14);
+  font-size: 0.875em;
+  min-height: 40px;
+  padding: 8px 16px;
+}
+
+.ui-CVLinkButton--small {
+  border-radius: calc(32em / 13);
+  font-size: 0.8125em;
+  min-height: 32px;
+  padding: 6px 10px;
+}
+
+/* Bordered small buttons exceeds the minimum height with the default padding */
+.ui-CVLinkButton--small:is(
+    .ui-CVLinkButton--outlined,
+    .ui-CVLinkButton--danger
+  ) {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ui-CVLinkButton--large,
+  .ui-CVLinkButton--medium,
+  .ui-CVLinkButton--small {
+    height: 1px;
+  }
+}
+
+.ui-CVLinkButton--contained {
+  background-color: var(--LinkButton--contained-backgroundColor);
+  border: none;
+  color: var(--LinkButton--contained-color);
+}
+
+.ui-CVLinkButton--contained:active {
+  background-color: var(--LinkButton--contained-onActive-backgroundColor);
+}
+
+@media (hover: hover) {
+  .ui-CVLinkButton--contained:hover {
+    background-color: var(--LinkButton--contained-onHover-backgroundColor);
+  }
+}
+
+.ui-CVLinkButton--outlined {
+  background-color: transparent;
+  border: 2px solid var(--LinkButton--outlined-borderColor);
+  color: var(--LinkButton--outlined-color);
+}
+
+.ui-CVLinkButton--outlined:active {
+  background-color: var(--LinkButton--outlined-onActive-backgroundColor);
+}
+
+@media (hover: hover) {
+  .ui-CVLinkButton--outlined:hover {
+    background-color: var(--LinkButton--outlined-onHover-backgroundColor);
+  }
+}
+
+.ui-CVLinkButton--lighted {
+  background-color: var(--LinkButton--lighted-backgroundColor);
+  border: none;
+  color: var(--LinkButton--lighted-color);
+}
+
+.ui-CVLinkButton--lighted:active {
+  background-color: var(--LinkButton--lighted-onActive-backgroundColor);
+}
+
+@media (hover: hover) {
+  .ui-CVLinkButton--lighted:hover {
+    background-color: var(--LinkButton--lighted-onHover-backgroundColor);
+  }
+}
+
+.ui-CVLinkButton--neutral {
+  background-color: var(--LinkButton--neutral-backgroundColor);
+  border: none;
+  color: var(--LinkButton--neutral-color);
+}
+
+.ui-CVLinkButton--neutral:active {
+  background-color: var(--LinkButton--neutral-onActive-backgroundColor);
+}
+
+@media (hover: hover) {
+  .ui-CVLinkButton--neutral:hover {
+    background-color: var(--LinkButton--neutral-onHover-backgroundColor);
+  }
+}
+
+.ui-CVLinkButton--danger {
+  background-color: transparent;
+  border: 2px solid var(--LinkButton--danger-borderColor);
+  color: var(--LinkButton--danger-color);
+}
+
+.ui-CVLinkButton--danger:active {
+  background-color: var(--LinkButton--danger-onActive-backgroundColor);
+}
+
+@media (hover: hover) {
+  .ui-CVLinkButton--danger:hover {
+    background-color: var(--LinkButton--danger-onHover-backgroundColor);
+  }
+}
+
+.ui-CVLinkButton-icon {
+  line-height: 0; /* Fix Icon position align */
+}
+
+.ui-CVLinkButton--iconstart .ui-CVLinkButton-icon--large {
+  font-size: 1.375em; /* Icon 22px / Text 16px = 1.375 */
+  margin-right: 6px;
+}
+
+.ui-CVLinkButton--iconstart .ui-CVLinkButton-icon--medium {
+  font-size: 1.429em; /* Icon 20px / Text 14px =  1.42857142857 */
+  margin-right: 4px;
+}
+
+.ui-CVLinkButton--iconstart .ui-CVLinkButton-icon--small {
+  font-size: 1.23em; /* Icon 16px / Text 13px = 1.23076923077 */
+  margin-right: 2px;
+}
+
+.ui-CVLinkButton--iconend {
+  flex-direction: row-reverse;
+}
+
+.ui-CVLinkButton--iconend .ui-CVLinkButton-icon--large {
+  font-size: 1.125em; /* Icon 18px / Text 16px = 1.125 */
+  margin-left: 6px;
+}
+
+.ui-CVLinkButton--iconend .ui-CVLinkButton-icon--medium {
+  font-size: 1.143em; /* Icon 16px / Text 14px =  1.14285714285 */
+  margin-left: 4px;
+}
+
+.ui-CVLinkButton--iconend .ui-CVLinkButton-icon--small {
+  font-size: 1.077em; /* Icon 14px / Text 13px = 1.07692307692 */
+  margin-left: 2px;
+}
