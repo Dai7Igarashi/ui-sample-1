@@ -1,16 +1,22 @@
 name: release
 
 on:
-  push:
-    branches:
-      - release/auto
-      - release/major
-      - release/minor
-      - release/patch
-      - release/premajor
-      - release/preminor
-      - release/prepatch
-      - release/prerelease
+  workflow_dispatch:
+    inputs:
+      versioning:
+        description: 'Release version' 
+        required: true
+        type: choice
+        default: 'auto'
+        options:
+          - auto
+          - major
+          - minor
+          - patch
+          - premajor
+          - preminor
+          - prepatch
+          - prerelease
 
 env:
   TZ: Asia/Tokyo
@@ -32,6 +38,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
       - name: Setup node
         uses: actions/setup-node@v4
         with:
@@ -41,11 +48,10 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Extract branch from git ref
+      - name: Checkout and Push New Branch
         run: |
-          echo "branch_name=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
-          echo "version=${GITHUB_REF##*/}" >> $GITHUB_OUTPUT
-        id: extract_branch
+          git checkout -b release/${{ github.event.inputs.versioning }}
+          git push origin release/${{ github.event.inputs.versioning }}
       - name: Cache
         uses: actions/cache@v4
         with:
@@ -59,16 +65,16 @@ jobs:
         run: npm run build
       - name: publish
         run: |
-          if [[ "${{ steps.extract_branch.outputs.version }}" == "auto" ]]; then
+          if [[ "${{ github.event.inputs.versioning }}" == "auto" ]]; then
             echo "🚀 publish auto"
-            echo "🚀 branch_name: ${{ steps.extract_branch.outputs.branch_name }}"
-            echo "🚀 version: ${{ steps.extract_branch.outputs.version }}"
+            echo "🚀 branch_name: release/${{ github.event.inputs.versioning }}"
+            echo "🚀 version: ${{ github.event.inputs.versioning }}"
             npx lerna publish --conventional-commits --create-release github --yes --no-private
           else
             echo "🚀 publish manual"
-            echo "🚀 branch_name: ${{ steps.extract_branch.outputs.branch_name }}"
-            echo "🚀 version: ${{ steps.extract_branch.outputs.version }}"
-            npx lerna publish ${{ steps.extract_branch.outputs.version }} --conventional-commits --create-release github --yes --no-private
+            echo "🚀 branch_name: release/${{ github.event.inputs.versioning }}"
+            echo "🚀 version: ${{ github.event.inputs.versioning }}"
+            npx lerna publish ${{ github.event.inputs.versioning }} --conventional-commits --create-release github --yes --no-private
           fi
   after_release:
     name: create release pull request
@@ -85,16 +91,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.extract_branch.outputs.branch_name }}
+          ref: release/${{ github.event.inputs.versioning }}
           fetch-depth: 0
       - name: Set git config
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - name: Extract branch from git ref
-        run: |
-          echo "branch_name=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
-        id: extract_branch
       - name: Create Pull Request
         run: |
-          gh pr create --base main --head ${{ steps.extract_branch.outputs.branch_name }} --title "Release" --body "publish to github packages!"
+          gh pr create --base main --head release/${{ github.event.inputs.versioning }} --title "Release" --body "publish to github packages!"
