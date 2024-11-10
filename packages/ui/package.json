@@ -5,12 +5,15 @@
     "node": ">=22",
     "npm": ">=10"
   },
-  "main": "./dist/index.js",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": ".dist/index.d.ts",
   "style": "./dist/index.css",
   "files": [
     "dist"
+  ],
+  "sideEffects": [
+    "*.css"
   ],
   "publishConfig": {
     "access": "public",
@@ -23,11 +26,13 @@
   },
   "license": "UNLICENSED",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "npx rimraf dist",
+    "cp": "npx cpx 'dist/**/*' .",
     "prebuild": "npm run clean",
     "build": "run-s build:scripts build:styles",
     "build:scripts": "vite build && vue-tsc -b",
-    "build:styles": "postcss src/**/*.css src/*.css --base src -d dist/"
+    "build:styles": "postcss src/**/*.css src/*.css --base src -d dist/",
+    "prepublishOnly": "npm run build && npm run cp"
   },
   "dependencies": {
     "vue": "3.5.12"

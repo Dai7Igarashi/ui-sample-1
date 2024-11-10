@@ -17,15 +17,11 @@ export default defineConfig({
           fileURLToPath(new URL(file, import.meta.url))
         ])
       ),
-      formats: ['es', 'cjs'],
+      formats: ['es'],
     },
+    outDir: path.resolve(process.cwd(), 'dist'),
     rollupOptions: {
-      output: {
-        exports: 'named',
-        dir: path.resolve(process.cwd(), 'dist'),
-      },
       external: ['vue'],
-    },
-    emptyOutDir: true,
+    }
   },
 });

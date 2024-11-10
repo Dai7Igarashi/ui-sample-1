@@ -1,0 +1,8 @@
+src/
+dist/
+*.md
+postcss.config.js
+vite.config.mts
+tsconfig.*
+.gitignore
+.turbo/
