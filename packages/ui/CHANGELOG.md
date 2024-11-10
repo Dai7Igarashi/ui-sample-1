@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.4.1...@dai7igarashi/ui@0.5.0) (2024-11-10)
+
+### Features
+
+* add peerDependencies and npm install ([c934d87](https://github.com/Dai7Igarashi/ui-sample-1/commit/c934d87b53c9a46fa8a3889ea3c74d2b641f317d))
+
 ## [0.4.1](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.4.0...@dai7igarashi/ui@0.4.1) (2024-11-10)
 
 ### Bug Fixes
