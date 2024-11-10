@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.4.0...@dai7igarashi/ui@0.4.1) (2024-11-10)
+
+### Bug Fixes
+
+* package.json ([9a6e821](https://github.com/Dai7Igarashi/ui-sample-1/commit/9a6e821035f83641106307238a7daf4224ecb649))
+
 # [0.4.0](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.3.1...@dai7igarashi/ui@0.4.0) (2024-11-10)
 
 ### Bug Fixes
