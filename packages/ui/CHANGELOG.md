@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.3.1...@dai7igarashi/ui@0.4.0) (2024-11-10)
+
+### Bug Fixes
+
+* ui publish config ([fd9d407](https://github.com/Dai7Igarashi/ui-sample-1/commit/fd9d4070cbbe4a08338b2e837f349a15b1306c69))
+
+### Features
+
+* change vite.config ([01d7c19](https://github.com/Dai7Igarashi/ui-sample-1/commit/01d7c19ee49d750cd6c0e98f040d53e1b3e8c052))
+
 ## [0.3.1](https://github.com/Dai7Igarashi/ui-sample-1/compare/@dai7igarashi/ui@0.3.0...@dai7igarashi/ui@0.3.1) (2024-11-05)
 
 ### Bug Fixes
