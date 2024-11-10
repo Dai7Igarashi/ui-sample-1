@@ -5,13 +5,10 @@
     "node": ">=22",
     "npm": ">=10"
   },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": ".dist/index.d.ts",
-  "style": "./dist/index.css",
-  "files": [
-    "dist"
-  ],
+  "main": "index.mjs",
+  "module": "index.mjs",
+  "types": "index.d.ts",
+  "style": "index.css",
   "sideEffects": [
     "*.css"
   ],
