@@ -1,3 +1,3 @@
-import CVLinkButton from './CVLinkButton.vue';
+import CVLinkButton from "./CVLinkButton.vue";
 
 export { CVLinkButton };

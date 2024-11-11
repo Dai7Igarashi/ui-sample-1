@@ -1,11 +1,6 @@
-import { Button } from './Button';
-import { TextLink } from './TextLink';
-import { CVLinkButton } from './CVLinkButton';
-import * as Form from './Form';
+import { Button } from "./Button";
+import { CVLinkButton } from "./CVLinkButton";
+import * as Form from "./Form";
+import { TextLink } from "./TextLink";
 
-export {
-  Button,
-  TextLink,
-  CVLinkButton,
-  Form
-};
+export { Button, TextLink, CVLinkButton, Form };

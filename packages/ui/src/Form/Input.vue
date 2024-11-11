@@ -1,15 +1,13 @@
 <template>
-  <button class="input">
-    Input: {{ text }}
-  </button>
+  <button class="input">Input: {{ text }}</button>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps } from "vue";
 
 type Props = {
   text: string;
-}
+};
 
 defineProps<Props>();
 </script>

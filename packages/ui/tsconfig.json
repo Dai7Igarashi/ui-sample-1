@@ -9,5 +9,5 @@
     "typeRoots": ["types"]
   },
   "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.vue"],
-  "exclude": ["./src/**/*.test.*","./src/**/*.stories.*"]
+  "exclude": ["./src/**/*.test.*", "./src/**/*.stories.*"]
 }
