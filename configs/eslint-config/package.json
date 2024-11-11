@@ -1,13 +1,8 @@
 {
-  "name": "eslint-config",
-  "version": "1.0.0",
+  "name": "@repo/eslint-config",
   "main": "index.js",
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  }
 }
