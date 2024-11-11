@@ -15,7 +15,9 @@
     "dryrun": "lerna publish --dry-run --conventional-commits --create-release github --yes --no-private",
     "dryrun:major": "npm run dryrun -- major",
     "dryrun:minor": "npm run dryrun -- minor",
-    "dryrun:patch": "npm run dryrun -- patch"
+    "dryrun:patch": "npm run dryrun -- patch",
+    "lint": "turbo run lint && prettier --check '**/*.{js,jsx,ts,tsx,vue,json}'",
+    "format": "turbo run fix && prettier --write '**/*.{js,jsx,ts,tsx,vue,json}'"
   },
   "devDependencies": {
     "@lerna-lite/cli": "3.10.0",

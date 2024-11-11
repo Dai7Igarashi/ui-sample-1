@@ -30,12 +30,8 @@
     "build:scripts": "vite build && vue-tsc -b",
     "build:styles": "postcss src/**/*.css src/*.css --base src -d dist/",
     "prepublishOnly": "npm run build && npm run cp",
-    "lint": "run-p lint:*",
-    "lint:eslint": "eslint . --max-warnings 0",
-    "lint:prettier": "prettier --check '**/*.{js,jsx,ts,tsx,vue,json,md}'",
-    "format": "npm run format:eslint && npm run format:prettier",
-    "format:eslint": "eslint --fix",
-    "format:prettier": "prettier --write '**/*.{js,jsx,ts,tsx,vue,json,md}'"
+    "lint": "eslint . --max-warnings 0",
+    "fix": "eslint --fix"
   },
   "dependencies": {
     "vue": "3.5.12"

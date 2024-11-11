@@ -9,11 +9,7 @@ const pluginVue = require("eslint-plugin-vue");
 const vueParser = require("vue-eslint-parser");
 
 const configGlobalIgnore = {
-  ignores: [
-    "**/node_modules/*",
-    "**/dist/*",
-    "**/storybook-static/*"
-  ]
+  ignores: ["**/node_modules/*", "**/dist/*", "**/storybook-static/*"],
 };
 
 const configForCommon = {
@@ -22,7 +18,7 @@ const configForCommon = {
     turbo: pluginTurbo,
     import: pluginImport,
     "unused-imports": pluginUnusedImports,
-    "@stylistic/js": stylisticPluginJs
+    "@stylistic/js": stylisticPluginJs,
   },
   rules: {
     ...pluginTurbo.configs.recommended.rules,
@@ -31,24 +27,24 @@ const configForCommon = {
       { alphabetize: { order: "asc", caseInsensitive: true } },
     ],
     "unused-imports/no-unused-imports": "error",
-    "@stylistic/js/eol-last": ["error", "always"]
-  }
+    "@stylistic/js/eol-last": ["error", "always"],
+  },
 };
 
 const configForTypeScript = {
   files: ["**/*.{ts,tsx}"],
   languageOptions: {
-    parser: typescriptParser
+    parser: typescriptParser,
   },
   plugins: {
-    "@typescript-eslint": typescriptPlugin
+    "@typescript-eslint": typescriptPlugin,
   },
   rules: {
     ...typescriptPlugin.configs.recommended.rules,
     ...typescriptPlugin.configs["eslint-recommended"].overrides[0].rules,
     curly: "error",
-    "@typescript-eslint/no-unused-vars": "off"
-  }
+    "@typescript-eslint/no-unused-vars": "off",
+  },
 };
 
 const configForVueSFC = {
@@ -62,21 +58,21 @@ const configForVueSFC = {
     },
   },
   plugins: {
-    vue: pluginVue
+    vue: pluginVue,
   },
   rules: {
-    ...pluginVue.configs['flat/recommended'].rules,
-  }
-}
+    ...pluginVue.configs["flat/recommended"].rules,
+  },
+};
 
 const configForTestAndStories = {
   files: ["**/*.test.{js,jsx,ts,tsx}", "**/*.stories.{js,jsx,ts,tsx}"],
   plugins: {
-    "@typescript-eslint": typescriptPlugin
+    "@typescript-eslint": typescriptPlugin,
   },
   rules: {
-    "@typescript-eslint/no-explicit-any": "off"
-  }
+    "@typescript-eslint/no-explicit-any": "off",
+  },
 };
 
 const eslintConfigs = [
