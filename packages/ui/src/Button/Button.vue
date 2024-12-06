@@ -7,6 +7,7 @@ import { defineProps } from "vue";
 
 type Props = {
   text: string;
+  name?: string;
 };
 
 defineProps<Props>();
